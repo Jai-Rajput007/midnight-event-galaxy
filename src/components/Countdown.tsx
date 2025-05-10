@@ -41,22 +41,24 @@ const Countdown: React.FC<CountdownProps> = ({ targetDate }) => {
 
   return (
     <div>
-      <style jsx>{`
-        @keyframes flip {
-          0% {
-            transform: rotateX(0);
+      <style>
+        {`
+          @keyframes flip {
+            0% {
+              transform: rotateX(0);
+            }
+            50% {
+              transform: rotateX(90deg);
+            }
+            100% {
+              transform: rotateX(0);
+            }
           }
-          50% {
-            transform: rotateX(90deg);
+          .animate-flip {
+            animation: flip 0.5s ease-out;
           }
-          100% {
-            transform: rotateX(0);
-          }
-        }
-        .animate-flip {
-          animation: flip 0.5s ease-out;
-        }
-      `}</style>
+        `}
+      </style>
       <div className="flex flex-wrap justify-center gap-4 md:gap-6">
         <div className="countdown-box w-16 h-16 md:w-24 md:h-24 rounded-md flex flex-col items-center justify-center animate-pulse-glow">
           <span className={`text-2xl md:text-4xl font-bold text-white ${flipClass}`}>{formatNumber(days)}</span>

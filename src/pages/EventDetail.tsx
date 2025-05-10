@@ -4,7 +4,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useEvents } from '../contexts/EventContext';
 import { useAuth } from '../contexts/AuthContext';
 import { Button } from '@/components/ui/button';
-import { Calendar, Clock, MapPin, ArrowLeft, Users, Share2, Calendar, Edit } from 'lucide-react';
+import { Calendar, Clock, MapPin, ArrowLeft, Users, Share2, Edit } from 'lucide-react';
 import { toast } from 'sonner';
 import {
   Card,

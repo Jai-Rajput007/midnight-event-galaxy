@@ -7,8 +7,8 @@ interface StarfieldProps {
 }
 
 const Starfield: React.FC<StarfieldProps> = ({ 
-  starCount = 300, 
-  speed = 0.1 
+  starCount = 500, 
+  speed = 0.2 
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   
@@ -32,8 +32,8 @@ const Starfield: React.FC<StarfieldProps> = ({
     const stars = Array.from({ length: starCount }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      radius: Math.random() * 1.8 + 0.2,
-      speed: Math.random() * speed + 0.05,
+      radius: Math.random() * 2 + 0.2,
+      speed: Math.random() * speed + 0.1,
       brightness: Math.random() * 0.7 + 0.3,
       pulse: Math.random() * 0.05,
       pulseSpeed: 0.01 + Math.random() * 0.02
@@ -70,7 +70,7 @@ const Starfield: React.FC<StarfieldProps> = ({
         // Draw glow for larger stars
         if (star.radius > 1.3) {
           ctx.beginPath();
-          ctx.arc(star.x, star.y, star.radius * 2, 0, Math.PI * 2);
+          ctx.arc(star.x, star.y, star.radius * 2.5, 0, Math.PI * 2);
           ctx.fillStyle = `rgba(255, 255, 255, ${pulseBrightness * 0.15})`;
           ctx.fill();
         }
@@ -82,8 +82,8 @@ const Starfield: React.FC<StarfieldProps> = ({
         if (star.y > canvas.height) {
           star.y = 0;
           star.x = Math.random() * canvas.width;
-          star.radius = Math.random() * 1.8 + 0.2;
-          star.speed = Math.random() * speed + 0.05;
+          star.radius = Math.random() * 2 + 0.2;
+          star.speed = Math.random() * speed + 0.1;
         }
       });
       

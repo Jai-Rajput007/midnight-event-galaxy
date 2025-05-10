@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -52,15 +53,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
+				moonstone: {
+					DEFAULT: '#000000',
+					foreground: '#FFFFFF',
+					accent: '#5D5E7D',
+					muted: '#292B3E',
+					border: '#33354A'
 				}
 			},
 			borderRadius: {
@@ -84,11 +82,33 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'twinkle': {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'50%': {
+						opacity: '0.2'
+					}
+				},
+				'float-up': {
+					'0%': {
+						transform: 'translateY(10px)',
+						opacity: '0'
+					},
+					'100%': {
+						transform: 'translateY(0)',
+						opacity: '1'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'twinkle': 'twinkle 4s ease-in-out infinite',
+				'twinkle-slow': 'twinkle 6s ease-in-out infinite',
+				'twinkle-slower': 'twinkle 8s ease-in-out infinite',
+				'float-up': 'float-up 1s ease-out'
 			}
 		}
 	},

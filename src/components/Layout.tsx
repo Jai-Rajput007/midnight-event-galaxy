@@ -9,8 +9,9 @@ const Layout: React.FC = () => {
   return (
     <div className="flex flex-col min-h-screen">
       <Starfield />
+      <div className="absolute top-0 left-0 w-full h-full z-[-1] bg-gradient-radial from-indigo-900/10 via-transparent to-transparent pointer-events-none"></div>
       <Navbar />
-      <main className="flex-grow pt-16">
+      <main className="flex-grow pt-16 animate-fade-in">
         <Outlet />
       </main>
       <Footer />
